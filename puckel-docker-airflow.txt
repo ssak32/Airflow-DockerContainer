@@ -1,0 +1,36 @@
+Reference: https://towardsdatascience.com/getting-started-with-airflow-using-docker-cd8b44dbff98
+
+Deploying Airflow with Docker
+-----------------------------
+
+Pull the docker image:
+sudo docker pull puckel/docker-airflow
+
+See the image that was downloaded:
+sudo docker images
+
+Create a running container:
+sudo docker run -d -p 8080:8080 puckel/docker-airflow webserver
+
+Find the container name:
+sudo docker ps
+
+Jump into your running container:
+sudo docker exec -ti <container name> bash
+
+
+Running a DAG
+-------------
+
+Creating 'volume' within your local machine and linking the same to the docker container dag folder:
+sudo docker run -d -p 8080:8080 -v /path/to/dags/on/your/local/machine/:/usr/local/airflow/dags  puckel/docker-airflow webserver
+
+# If below error araises
+# "docker: Error response from daemon: driver failed programming external connectivity on endpoint cocky_black (48cc72a408eafa9f0a77675427c37e64546eff8ea7ff21cf99f20e8c68074b95): Bind for 0.0.0.0:8080 failed: port is already allocated."
+# Run below three commands:
+# - sudo service docker stop
+# - sudo rm /var/lib/docker/network/files/local-kv.db
+# - sudo service docker start
+
+Test the DAG:
+airflow test <Helloworld> <task_1> 2015-06-01
