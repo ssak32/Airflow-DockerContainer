@@ -3,7 +3,7 @@ Reference: https://towardsdatascience.com/getting-started-with-airflow-using-doc
 Deploying Airflow with Docker
 -----------------------------
 
-Pull the docker image:
+Pull the Airflow docker image:
 sudo docker pull puckel/docker-airflow
 
 See the image that was downloaded:
