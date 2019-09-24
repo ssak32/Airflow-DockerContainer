@@ -1,5 +1,7 @@
 Reference: https://towardsdatascience.com/getting-started-with-airflow-using-docker-cd8b44dbff98
 
+Note: The below guide will install Airflow with Sequential Executor. For Celery or Local Executor clone/download "https://github.com/puckel/docker-airflow" github repositor and follow the instruction underneath the github page.
+
 Deploying Airflow with Docker
 -----------------------------
 
