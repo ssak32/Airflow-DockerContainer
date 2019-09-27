@@ -18,7 +18,7 @@ Find the container name:
 sudo docker ps
 
 Jump into your running container:
-sudo docker exec -ti <container name> bash
+sudo docker exec -it <container name> bash
 
 
 Running a DAG
