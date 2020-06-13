@@ -36,4 +36,3 @@ sudo docker run -d -p 8080:8080 -v /path/to/dags/on/your/local/machine/:/usr/loc
 
 Test the DAG:
 airflow test <Helloworld> <task_1> 2015-06-01
-
